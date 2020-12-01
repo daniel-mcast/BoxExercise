@@ -28,6 +28,15 @@ public class PlayerController : MonoBehaviour
         {
             //move the player to the right
             transform.Translate(_speed * Time.deltaTime,0,0);
+            //Moving to the right changes the colour of the player to blue
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
+        else if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            //move the player to the left
+            transform.Translate(-_speed * Time.deltaTime,0,0);
+            //Moving to the left changes the colours of the player to green
+            gameObject.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }
